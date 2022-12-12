@@ -16,38 +16,27 @@ import com.example.haroun_dominique_examen1adultos.navigation.AppScreens
 import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 
 @Composable
-fun FirstScreen(navController: NavController) {
+fun ThirdScreen(navController: NavController) {
     Scaffold(topBar = {
         TopAppBar() {
-            Text("FirstScreen")
+            Text("ThirdScreen")
         }
     }) {
-        BodyContent(navController)
+        ThirdBodyContent(navController)
     }
 }
 
 @Composable
-fun BodyContent(navController: NavController) {
+fun ThirdBodyContent(navController: NavController) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Button(onClick = {
-            navController.navigate(route = AppScreens.SecondScreen.route)
+            navController.popBackStack()
         }) {
-            Text(text = "Navegar a SecondScreen")
-        }
-
-        Button(onClick = {
-            navController.navigate(route = AppScreens.ThirdScreen.route)
-        }) {
-            Text(text = "Navegar a ThirdScreen")
-        }
-        Button(onClick = {
-            navController.navigate(route = AppScreens.FourthScreen.route)
-        }) {
-            Text(text = "Navegar a FourthScreen")
+            Text(text = "Volver atrás")
         }
     }
 }

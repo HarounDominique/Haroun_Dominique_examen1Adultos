@@ -6,7 +6,9 @@ import androidx.navigation.compose.composable
 
 import androidx.navigation.compose.rememberNavController
 import com.example.haroun_dominique_examen1adultos.screens.FirstScreen
+import com.example.haroun_dominique_examen1adultos.screens.FourthScreen
 import com.example.haroun_dominique_examen1adultos.screens.SecondScreen
+import com.example.haroun_dominique_examen1adultos.screens.ThirdScreen
 
 @Composable
 fun AppNavigation() {
@@ -17,6 +19,12 @@ fun AppNavigation() {
         }
         composable(route = AppScreens.SecondScreen.route){
             SecondScreen(navController)
+        }
+        composable(route = AppScreens.ThirdScreen.route){
+            ThirdScreen(navController)
+        }
+        composable(route = AppScreens.FourthScreen.route){
+            FourthScreen(navController)
         }
     }
 
